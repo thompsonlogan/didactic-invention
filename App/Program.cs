@@ -9,11 +9,11 @@
                 Console.WriteLine("Input directions");
                 string? input = Console.ReadLine();
                 double distance = CalculateDistance(input); // 15F6B6B5L16R8B16F20L6F13F11R
-                Console.WriteLine("The Euclidean distance from the starting point to the destination is: " + distance);
+                Console.WriteLine($"The Euclidean distance from the starting point to the destination is: {distance}");
             }
             catch (Exception e)
             {
-                Console.WriteLine("Exception: " + e.Message);
+                Console.WriteLine($"Exception: {e.Message}");
             }
         }
 
@@ -23,7 +23,7 @@
             string distanceStr = "";
 
             if (string.IsNullOrWhiteSpace(directions))
-                throw new ArgumentNullException("Directions cannot be null or empty.");
+                throw new ArgumentNullException("Directions cannot be null or empty");
         
             foreach (char direction in directions)
             {
@@ -34,7 +34,7 @@
                 else if (char.IsLetter(direction))
                 {
                     if (string.IsNullOrEmpty(distanceStr)) 
-                        throw new ArgumentException("Invalid input format: missing distance.");
+                        throw new ArgumentException("Invalid input format: missing distance");
 
                     int distance = int.Parse(distanceStr);
                     distanceStr = ""; // reset distance string
@@ -63,7 +63,7 @@
 
             // if input ends with a remaining distance and no direction
             if (!string.IsNullOrEmpty(distanceStr))
-                throw new ArgumentException("Invalid input format: incomplete instruction.");
+                throw new ArgumentException("Invalid input format: incomplete instruction");
 
             return Math.Sqrt((x * x) + (y * y));
         }
