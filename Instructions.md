@@ -1,1 +1,1 @@
-To run the program you will need .net 6.0 or higher. You can change the "TargetVersion" in the .csproj files for the "App" and "UnitTests" projects if needed. 
+To build the program you will need .net 6.0 or higher. You can change the "TargetVersion" in the .csproj files for the "App" and "UnitTests" projects if needed. To run the program build the "App" project then run it with visual studio.
